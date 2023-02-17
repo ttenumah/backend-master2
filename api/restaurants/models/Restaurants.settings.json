@@ -1,0 +1,33 @@
+{
+  "connection": "mongo",
+  "collectionName": "restaurants",
+  "info": {
+    "name": "restaurants",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "dishes": {
+      "collection": "dish",
+      "via": "restaurant"
+    }
+  }
+}
